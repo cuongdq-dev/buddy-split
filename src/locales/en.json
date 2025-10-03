@@ -1,0 +1,175 @@
+{
+  "app": {
+    "name": "SplitWise",
+    "tagline": "Share expenses with friends and groups effortlessly"
+  },
+  "auth": {
+    "continueWithGoogle": "Continue with Google",
+    "whyChooseUs": "Why Choose Us",
+    "features": {
+      "groupManagement": {
+        "title": "Group Management",
+        "description": "Create unlimited groups"
+      },
+      "realTimeChat": {
+        "title": "Real-time Chat",
+        "description": "Stay connected instantly"
+      },
+      "smartTracking": {
+        "title": "Smart Tracking",
+        "description": "Auto-calculate splits"
+      },
+      "securePrivate": {
+        "title": "Secure & Private",
+        "description": "Your data protected"
+      }
+    },
+    "hero": {
+      "badge": "Fast & Easy",
+      "title": "Split expenses with friends in seconds",
+      "description": "Track shared expenses, settle debts, and keep your group finances organized. Perfect for roommates, trips, and events.",
+      "easyTracking": {
+        "title": "Easy Expense Tracking",
+        "subtitle": "Add bills in seconds",
+        "description": "Snap a photo of receipts or manually enter expenses. We'll handle the math and split calculations."
+      },
+      "fairSplit": {
+        "title": "Fair Split Options",
+        "subtitle": "Multiple split methods",
+        "description": "Split equally, by percentage, by shares, or enter exact amounts. Flexible for any situation."
+      }
+    }
+  },
+  "topBar": {
+    "subtitle": "Manage expenses and chat with group",
+    "addMember": "Add Member",
+    "addExpense": "Add Expense",
+    "invitations": "Group Invitations",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "totalPaid": "Total Paid",
+    "totalOwed": "Total Owed",
+    "netBalance": "Net Balance",
+    "acrossAllGroups": "Across all groups",
+    "toBeSettled": "To be settled",
+    "youreOwed": "You're owed",
+    "quickActions": "Quick Actions",
+    "createGroup": {
+      "title": "Create Group",
+      "description": "Start a new expense group"
+    },
+    "addExpense": {
+      "title": "Add Expense",
+      "description": "Record a new expense"
+    },
+    "recentActivities": "Recent Activities",
+    "activities": {
+      "hotelAdded": "Hotel Booking added",
+      "youPaid": "You paid {{name}}",
+      "dinnerAdded": "Dinner expense added",
+      "uberAdded": "Uber ride added",
+      "paid": "{{name}} paid you"
+    },
+    "timeAgo": {
+      "hoursAgo": "{{count}} hours ago",
+      "dayAgo": "{{count}} day ago",
+      "daysAgo": "{{count}} days ago"
+    },
+    "expense": "expense",
+    "settlement": "settlement"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "myGroups": "My Groups",
+    "createGroup": "Create Group"
+  },
+  "tabs": {
+    "chat": "Chat",
+    "expenses": "Expenses"
+  },
+  "chat": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "typeMessage": "Type a message...",
+    "send": "Send"
+  },
+  "expenses": {
+    "title": "Expenses",
+    "addExpense": "Add Expense",
+    "paidBy": "Paid by",
+    "participants": "{{count}} participants",
+    "viewDetails": "View Details",
+    "noExpenses": "No expenses yet",
+    "noExpensesDescription": "Add your first expense to get started"
+  },
+  "expenseDetails": {
+    "title": "Expense Details",
+    "description": "Description",
+    "totalAmount": "Total Amount",
+    "paidBy": "Paid By",
+    "date": "Date",
+    "participants": "Participants",
+    "splitBreakdown": "Split Breakdown",
+    "share": "Share",
+    "settlementSuggestions": "Settlement Suggestions",
+    "owes": "{{from}} owes {{to}}",
+    "close": "Close"
+  },
+  "addExpense": {
+    "title": "Add New Expense",
+    "description": "Record a new expense for the group",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "e.g., Dinner at restaurant",
+    "amount": "Amount",
+    "amountPlaceholder": "0.00",
+    "date": "Date",
+    "pickDate": "Pick a date",
+    "participants": "Participants",
+    "selectParticipants": "Select participants",
+    "splitType": "Split Type",
+    "splitTypes": {
+      "equal": "Equal Split",
+      "percentage": "By Percentage",
+      "custom": "Custom Amounts"
+    },
+    "cancel": "Cancel",
+    "addExpense": "Add Expense"
+  },
+  "createGroup": {
+    "title": "Create New Group",
+    "description": "Create a new group to share expenses with friends or family.",
+    "groupName": "Group Name",
+    "groupNamePlaceholder": "e.g., Weekend Trip, Roommates",
+    "descriptionLabel": "Description (Optional)",
+    "descriptionPlaceholder": "What's this group for?",
+    "cancel": "Cancel",
+    "create": "Create Group"
+  },
+  "addMember": {
+    "title": "Add Member to Group",
+    "description": "Invite someone to join this group by their Gmail address.",
+    "emailLabel": "Gmail Address",
+    "emailPlaceholder": "friend@gmail.com",
+    "cancel": "Cancel",
+    "sendInvite": "Send Invite",
+    "success": "Invitation sent successfully!",
+    "error": "Please enter a valid Gmail address"
+  },
+  "invitations": {
+    "title": "Group Invitations",
+    "invitedBy": "Invited by",
+    "members": "{{count}} members",
+    "accept": "Accept",
+    "reject": "Reject",
+    "noInvitations": "No pending invitations",
+    "noInvitationsDescription": "You're all caught up!"
+  },
+  "language": {
+    "label": "Language",
+    "english": "English",
+    "vietnamese": "Tiếng Việt"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "app": {
+    "name": "SplitWise",
+    "tagline": "Chia sẻ chi phí với bạn bè và nhóm một cách dễ dàng"
+  },
+  "auth": {
+    "continueWithGoogle": "Tiếp tục với Google",
+    "whyChooseUs": "Tại sao chọn chúng tôi",
+    "features": {
+      "groupManagement": {
+        "title": "Quản lý nhóm",
+        "description": "Tạo nhóm không giới hạn"
+      },
+      "realTimeChat": {
+        "title": "Trò chuyện thời gian thực",
+        "description": "Kết nối ngay lập tức"
+      },
+      "smartTracking": {
+        "title": "Theo dõi thông minh",
+        "description": "Tự động tính toán chia sẻ"
+      },
+      "securePrivate": {
+        "title": "An toàn & Riêng tư",
+        "description": "Dữ liệu được bảo vệ"
+      }
+    },
+    "hero": {
+      "badge": "Nhanh & Dễ dàng",
+      "title": "Chia chi phí với bạn bè trong vài giây",
+      "description": "Theo dõi chi phí chung, thanh toán nợ và quản lý tài chính nhóm. Hoàn hảo cho bạn cùng phòng, chuyến đi và sự kiện.",
+      "easyTracking": {
+        "title": "Theo dõi chi phí dễ dàng",
+        "subtitle": "Thêm hóa đơn trong vài giây",
+        "description": "Chụp ảnh hóa đơn hoặc nhập thủ công. Chúng tôi sẽ xử lý tính toán và chia sẻ."
+      },
+      "fairSplit": {
+        "title": "Tùy chọn chia công bằng",
+        "subtitle": "Nhiều phương thức chia",
+        "description": "Chia đều, theo phần trăm, theo phần hoặc nhập số tiền chính xác. Linh hoạt cho mọi tình huống."
+      }
+    }
+  },
+  "topBar": {
+    "subtitle": "Quản lý chi phí và trò chuyện với nhóm",
+    "addMember": "Thêm thành viên",
+    "addExpense": "Thêm chi phí",
+    "invitations": "Lời mời nhóm",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt",
+    "logout": "Đăng xuất"
+  },
+  "dashboard": {
+    "totalPaid": "Tổng đã trả",
+    "totalOwed": "Tổng nợ",
+    "netBalance": "Số dư ròng",
+    "acrossAllGroups": "Trên tất cả nhóm",
+    "toBeSettled": "Cần thanh toán",
+    "youreOwed": "Bạn được nợ",
+    "quickActions": "Hành động nhanh",
+    "createGroup": {
+      "title": "Tạo nhóm",
+      "description": "Bắt đầu nhóm chi phí mới"
+    },
+    "addExpense": {
+      "title": "Thêm chi phí",
+      "description": "Ghi lại chi phí mới"
+    },
+    "recentActivities": "Hoạt động gần đây",
+    "activities": {
+      "hotelAdded": "Đã thêm đặt phòng khách sạn",
+      "youPaid": "Bạn đã trả {{name}}",
+      "dinnerAdded": "Đã thêm chi phí bữa tối",
+      "uberAdded": "Đã thêm chuyến Uber",
+      "paid": "{{name}} đã trả bạn"
+    },
+    "timeAgo": {
+      "hoursAgo": "{{count}} giờ trước",
+      "dayAgo": "{{count}} ngày trước",
+      "daysAgo": "{{count}} ngày trước"
+    },
+    "expense": "chi phí",
+    "settlement": "thanh toán"
+  },
+  "sidebar": {
+    "dashboard": "Bảng điều khiển",
+    "myGroups": "Nhóm của tôi",
+    "createGroup": "Tạo nhóm"
+  },
+  "tabs": {
+    "chat": "Trò chuyện",
+    "expenses": "Chi phí"
+  },
+  "chat": {
+    "today": "Hôm nay",
+    "yesterday": "Hôm qua",
+    "typeMessage": "Nhập tin nhắn...",
+    "send": "Gửi"
+  },
+  "expenses": {
+    "title": "Chi phí",
+    "addExpense": "Thêm chi phí",
+    "paidBy": "Trả bởi",
+    "participants": "{{count}} người tham gia",
+    "viewDetails": "Xem chi tiết",
+    "noExpenses": "Chưa có chi phí nào",
+    "noExpensesDescription": "Thêm chi phí đầu tiên để bắt đầu"
+  },
+  "expenseDetails": {
+    "title": "Chi tiết chi phí",
+    "description": "Mô tả",
+    "totalAmount": "Tổng số tiền",
+    "paidBy": "Trả bởi",
+    "date": "Ngày",
+    "participants": "Người tham gia",
+    "splitBreakdown": "Chi tiết chia",
+    "share": "Phần",
+    "settlementSuggestions": "Đề xuất thanh toán",
+    "owes": "{{from}} nợ {{to}}",
+    "close": "Đóng"
+  },
+  "addExpense": {
+    "title": "Thêm chi phí mới",
+    "description": "Ghi lại chi phí mới cho nhóm",
+    "descriptionLabel": "Mô tả",
+    "descriptionPlaceholder": "vd: Bữa tối tại nhà hàng",
+    "amount": "Số tiền",
+    "amountPlaceholder": "0.00",
+    "date": "Ngày",
+    "pickDate": "Chọn ngày",
+    "participants": "Người tham gia",
+    "selectParticipants": "Chọn người tham gia",
+    "splitType": "Loại chia",
+    "splitTypes": {
+      "equal": "Chia đều",
+      "percentage": "Theo phần trăm",
+      "custom": "Số tiền tùy chỉnh"
+    },
+    "cancel": "Hủy",
+    "addExpense": "Thêm chi phí"
+  },
+  "createGroup": {
+    "title": "Tạo nhóm mới",
+    "description": "Tạo nhóm mới để chia sẻ chi phí với bạn bè hoặc gia đình.",
+    "groupName": "Tên nhóm",
+    "groupNamePlaceholder": "vd: Chuyến đi cuối tuần, Bạn cùng phòng",
+    "descriptionLabel": "Mô tả (Tùy chọn)",
+    "descriptionPlaceholder": "Nhóm này dùng để làm gì?",
+    "cancel": "Hủy",
+    "create": "Tạo nhóm"
+  },
+  "addMember": {
+    "title": "Thêm thành viên vào nhóm",
+    "description": "Mời ai đó tham gia nhóm này bằng địa chỉ Gmail.",
+    "emailLabel": "Địa chỉ Gmail",
+    "emailPlaceholder": "banbe@gmail.com",
+    "cancel": "Hủy",
+    "sendInvite": "Gửi lời mời",
+    "success": "Đã gửi lời mời thành công!",
+    "error": "Vui lòng nhập địa chỉ Gmail hợp lệ"
+  },
+  "invitations": {
+    "title": "Lời mời nhóm",
+    "invitedBy": "Được mời bởi",
+    "members": "{{count}} thành viên",
+    "accept": "Chấp nhận",
+    "reject": "Từ chối",
+    "noInvitations": "Không có lời mời đang chờ",
+    "noInvitationsDescription": "Bạn đã xem hết!"
+  },
+  "language": {
+    "label": "Ngôn ngữ",
+    "english": "English",
+    "vietnamese": "Tiếng Việt"
+  }
+}
