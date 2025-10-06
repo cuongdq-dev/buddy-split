@@ -1,22 +1,23 @@
 "use client";
 
-import { useState } from "react";
-import { Sidebar } from "@buddy/components/sidebar";
-import { TopBar } from "@buddy/components/top-bar";
-import { ChatTab } from "@buddy/components/chat-tab";
-import { ExpensesTab } from "@buddy/components/expenses-tab";
-import { DashboardTab } from "@buddy/components/dashboard-tab";
-import { CreateGroupModal } from "@buddy/components/create-group-modal";
 import { AddExpenseModal } from "@buddy/components/add-expense-modal";
 import { AddMemberModal } from "@buddy/components/add-member-modal";
+import { ChatTab } from "@buddy/components/chat-tab";
+import { CreateGroupModal } from "@buddy/components/create-group-modal";
+import { DashboardTab } from "@buddy/components/dashboard-tab";
+import { ExpensesTab } from "@buddy/components/expenses-tab";
+import { Sidebar } from "@buddy/components/sidebar";
+import { TopBar } from "@buddy/components/top-bar";
+import { Button } from "@buddy/components/ui/button";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@buddy/components/ui/tabs";
-import { Button } from "@buddy/components/ui/button";
+import useFcmToken from "@buddy/hooks/use-fcmToken";
 import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export function MainApp() {
   const [activeTab, setActiveTab] = useState("dashboard");

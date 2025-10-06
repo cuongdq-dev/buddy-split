@@ -1,8 +1,11 @@
-import type React from "react";
+import { Toaster } from "@buddy/components/ui/sonner";
+import { AuthProvider } from "@buddy/lib/auth-context";
+import { I18nProvider } from "@buddy/lib/i18n-context";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import type React from "react";
 import "./globals.css";
-import { I18nProvider } from "@buddy/lib/i18n-context";
+import useFcmToken from "@buddy/hooks/use-fcmToken";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="antialiased">
-        <I18nProvider>{children}</I18nProvider>
+        <AuthProvider>
+          <I18nProvider>
+            <Toaster />
+            {children}
+          </I18nProvider>
+        </AuthProvider>
       </body>
     </html>
   );

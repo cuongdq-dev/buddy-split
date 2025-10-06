@@ -38,7 +38,9 @@
         "subtitle": "Multiple split methods",
         "description": "Split equally, by percentage, by shares, or enter exact amounts. Flexible for any situation."
       }
-    }
+    },
+    "loggingIn": "Logging in...",
+    "loginSuccess": "Login successful! Redirecting..."
   },
   "topBar": {
     "subtitle": "Manage expenses and chat with group",

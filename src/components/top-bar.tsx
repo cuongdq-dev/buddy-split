@@ -1,11 +1,14 @@
 "use client";
 
-import { Button } from "@buddy/components/ui/button";
+import { InvitationsPanel } from "@buddy/components/invitations-panel";
+import { LanguageSwitcher } from "@buddy/components/language-switcher";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from "@buddy/components/ui/avatar";
+import { Badge } from "@buddy/components/ui/badge";
+import { Button } from "@buddy/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,17 +17,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@buddy/components/ui/dropdown-menu";
-import { Plus, Settings, LogOut, Bell, User, UserPlus } from "lucide-react";
-import { Badge } from "@buddy/components/ui/badge";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@buddy/components/ui/popover";
-import { InvitationsPanel } from "@buddy/components/invitations-panel";
-import { useState } from "react";
+import { HttpMethod, invokeRequest } from "@buddy/lib/api-core";
+import { useAuth } from "@buddy/lib/auth-context";
 import { useI18n } from "@buddy/lib/i18n-context";
-import { LanguageSwitcher } from "@buddy/components/language-switcher";
+import { Bell, LogOut, Plus, Settings, User, UserPlus } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface TopBarProps {
   groupName: string;
@@ -64,6 +67,8 @@ const mockInvitations = [
 
 export function TopBar({ groupName, onAddExpense, onAddMember }: TopBarProps) {
   const { t } = useI18n();
+  const { user, logout } = useAuth();
+  const router = useRouter();
   const [invitations, setInvitations] = useState(mockInvitations);
   const [isInvitationsOpen, setIsInvitationsOpen] = useState(false);
 
@@ -75,6 +80,17 @@ export function TopBar({ groupName, onAddExpense, onAddMember }: TopBarProps) {
   const handleRejectInvitation = (id: string) => {
     console.log("[v0] Rejecting invitation:", id);
     setInvitations(invitations.filter((inv) => inv.id !== id));
+  };
+
+  const handleLogout = () => {
+    invokeRequest({
+      method: HttpMethod.POST,
+      baseURL: "/auth/logout",
+      onHandleError: () => {},
+      onSuccess: async (res) => {
+        await logout();
+      },
+    });
   };
 
   return (
@@ -153,9 +169,13 @@ export function TopBar({ groupName, onAddExpense, onAddMember }: TopBarProps) {
               className="rounded-full hover:ring-2 hover:ring-primary/20"
             >
               <Avatar className="h-9 w-9 md:h-10 md:w-10 ring-2 ring-primary/10">
-                <AvatarImage src="/placeholder.svg?height=40&width=40" />
+                <AvatarImage src={user?.avatar || "/placeholder.svg"} />
                 <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground font-semibold">
-                  JD
+                  {user?.name
+                    ?.split(" ")
+                    .map((n) => n[0])
+                    .join("")
+                    .toUpperCase() || "U"}
                 </AvatarFallback>
               </Avatar>
             </Button>
@@ -164,15 +184,21 @@ export function TopBar({ groupName, onAddExpense, onAddMember }: TopBarProps) {
             <DropdownMenuLabel>
               <div className="flex items-center gap-3">
                 <Avatar className="h-12 w-12">
-                  <AvatarImage src="/placeholder.svg?height=48&width=48" />
+                  <AvatarImage src={user?.avatar || "/placeholder.svg"} />
                   <AvatarFallback className="bg-gradient-to-br from-primary to-accent text-primary-foreground">
-                    JD
+                    {user?.name
+                      ?.split(" ")
+                      .map((n) => n[0])
+                      .join("")
+                      .toUpperCase() || "U"}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col space-y-1">
-                  <p className="text-sm font-semibold">John Doe</p>
+                  <p className="text-sm font-semibold">
+                    {user?.name || "User"}
+                  </p>
                   <p className="text-xs text-muted-foreground">
-                    john@example.com
+                    {user?.email || "user@example.com"}
                   </p>
                 </div>
               </div>
@@ -191,7 +217,10 @@ export function TopBar({ groupName, onAddExpense, onAddMember }: TopBarProps) {
               {t("topBar.settings")}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-destructive focus:text-destructive">
+            <DropdownMenuItem
+              className="text-destructive focus:text-destructive"
+              onClick={handleLogout}
+            >
               <LogOut className="mr-2 h-4 w-4" />
               {t("topBar.logout")}
             </DropdownMenuItem>

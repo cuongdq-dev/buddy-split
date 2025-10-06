@@ -38,7 +38,9 @@
         "subtitle": "Nhiều phương thức chia",
         "description": "Chia đều, theo phần trăm, theo phần hoặc nhập số tiền chính xác. Linh hoạt cho mọi tình huống."
       }
-    }
+    },
+    "loggingIn": "Đang đăng nhập...",
+    "loginSuccess": "Đăng nhập thành công! Đang chuyển hướng..."
   },
   "topBar": {
     "subtitle": "Quản lý chi phí và trò chuyện với nhóm",

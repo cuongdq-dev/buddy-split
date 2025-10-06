@@ -1,5 +1,5 @@
-import { LoginPage } from "@buddy/components/login-page";
+import { MainApp } from "@buddy/components/main-app";
 
 export default function HomePage() {
-  return <LoginPage />;
+  return <MainApp />;
 }

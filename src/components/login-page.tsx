@@ -1,5 +1,6 @@
 "use client";
 
+import { LanguageSwitcher } from "@buddy/components/language-switcher";
 import { Button } from "@buddy/components/ui/button";
 import {
   Card,
@@ -8,19 +9,62 @@ import {
   CardHeader,
   CardTitle,
 } from "@buddy/components/ui/card";
+import useFcmToken from "@buddy/hooks/use-fcmToken";
+import { HttpMethod, invokeRequest } from "@buddy/lib/api-core";
+import { useAuth } from "@buddy/lib/auth-context";
+import { useI18n } from "@buddy/lib/i18n-context";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import {
+  MessageCircle,
+  Shield,
+  TrendingUp,
   Users,
   Wallet,
-  MessageCircle,
-  TrendingUp,
-  Shield,
   Zap,
 } from "lucide-react";
-import { useI18n } from "@buddy/lib/i18n-context";
-import { LanguageSwitcher } from "@buddy/components/language-switcher";
-
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { app } from "../../firebase";
 export function LoginPage() {
   const { t } = useI18n();
+  const { login } = useAuth();
+  const router = useRouter();
+
+  const { token } = useFcmToken();
+  const auth = getAuth(app);
+  const [loading, setLoading] = useState<boolean>(false);
+  const handleGoogleLogin = async () => {
+    try {
+      setLoading(true);
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+
+      const user = result.user;
+
+      const idToken = await user.getIdToken();
+      await invokeRequest({
+        method: HttpMethod.POST,
+        baseURL: "/auth/email/login",
+        params: { idToken, deviceToken: token },
+        onHandleError: () => setLoading(false),
+        onSuccess: async (res) => {
+          const { accessToken, refreshToken, id, email, name, avatar } = res;
+
+          await login(accessToken, {
+            id: id,
+            refreshToken: refreshToken,
+            name: name,
+            email: email!,
+            avatar: avatar,
+          });
+          router.push("/");
+        },
+      });
+    } catch (err) {
+      console.error("Google login failed:", err);
+      alert("Đăng nhập thất bại, vui lòng thử lại!");
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5 p-4 md:p-6">
@@ -49,7 +93,8 @@ export function LoginPage() {
             <Button
               className="w-full h-14 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
               size="lg"
-              onClick={() => (window.location.href = "/app")}
+              disabled={loading}
+              onClick={handleGoogleLogin}
             >
               <svg className="mr-3 h-5 w-5" viewBox="0 0 24 24">
                 <path

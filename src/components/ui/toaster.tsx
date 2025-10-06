@@ -1,6 +1,5 @@
 "use client";
 
-import { useToast } from "@buddy/hooks/use-toast";
 import {
   Toast,
   ToastClose,
@@ -9,10 +8,10 @@ import {
   ToastTitle,
   ToastViewport,
 } from "@buddy/components/ui/toast";
+import { useToast } from "@buddy/components/ui/use-toast";
 
 export function Toaster() {
   const { toasts } = useToast();
-
   return (
     <ToastProvider>
       {toasts.map(function ({ id, title, description, action, ...props }) {
